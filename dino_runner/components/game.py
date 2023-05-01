@@ -3,6 +3,10 @@ import pygame
 from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS
 
 from dino_runner.components.dinosaur import Dinosaur
+<<<<<<< Updated upstream
+=======
+from dino_runner.components.obstacles.obstacle.obstacle_manager import ObstacleManager
+>>>>>>> Stashed changes
 
 
 class Game:
@@ -17,6 +21,10 @@ class Game:
         self.x_pos_bg = 0
         self.y_pos_bg = 380
         self.player = Dinosaur()
+<<<<<<< Updated upstream
+=======
+        self.obstacle_manager = ObstacleManager()
+>>>>>>> Stashed changes
 
     def run(self):
         # Game loop: events - update - draw
@@ -31,16 +39,24 @@ class Game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.playing = False
-
+                 
     def update(self):
         user_input = pygame.key.get_pressed()
         self.player.update(user_input)
+<<<<<<< Updated upstream
+=======
+        self.obstacle_manager.update(self)
+>>>>>>> Stashed changes
 
     def draw(self):
         self.clock.tick(FPS)
         self.screen.fill((255, 255, 255))
         self.draw_background()
         self.player.draw(self.screen)
+<<<<<<< Updated upstream
+=======
+        self.obstacle_manager.draw(self.screen)
+>>>>>>> Stashed changes
         pygame.display.update()
         # pygame.display.flip()
 
